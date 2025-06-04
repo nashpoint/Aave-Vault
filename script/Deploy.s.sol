@@ -9,7 +9,7 @@ import {IERC20Upgradeable} from "@openzeppelin-upgradeable/interfaces/IERC20Upgr
 import "../src/ATokenVault.sol";
 import {console2} from "forge-std/Test.sol";
 
-// forge script script/Deploy.s.sol:Deploy --rpc-url $ARBITRUM_RPC_URL --private-key $PRIVATE_KEY --broadcast -vvvv
+// forge script script/Deploy.s.sol:Deploy --rpc-url $ARBITRUM_RPC_URL --broadcast --verify --legacy -vvvv
 
 contract Deploy is Script {
 
