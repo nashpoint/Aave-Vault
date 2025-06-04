@@ -11,9 +11,6 @@ import {console2} from "forge-std/Test.sol";
 
 // forge script script/Deploy.s.sol:Deploy --rpc-url $ARBITRUM_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --force --etherscan-api-key $ETHERSCAN_API_KEY -vvvv
 
-// forge script script/Deploy.s.sol:Deploy --rpc-url $POLYGON_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --force --etherscan-api-key $ETHERSCAN_API_KEY -vvvv
-
-
 contract Deploy is Script {
 
     address constant OWNER = 0x1F3D49c350BE3e63940c22f0560eEE3c34A717F9;
@@ -21,19 +18,15 @@ contract Deploy is Script {
     address constant USDC_ADDRESS_ARBITRUM = 0xaf88d065e77c8cC2239327C5EDb3A432268e5831;
     address constant POOL_ADDRESSES_PROVIDER_ADDRESS_ARBITRUM = 0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb;    
 
-    address constant USDC_ADDRESS_POLYGON = 0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359;
-    address constant POOL_ADDRESSES_PROVIDER_ADDRESS_POLYGON = 0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb;
- 
-
     // DEPLOYMENT PARAMETERS - CHANGE THESE FOR YOUR VAULT
     // ===================================================
-    address UNDERLYING_ASSET_ADDRESS = USDC_ADDRESS_POLYGON; // Underlying asset listed in the Aave Protocol
+    address UNDERLYING_ASSET_ADDRESS = USDC_ADDRESS_ARBITRUM; // Underlying asset listed in the Aave Protocol
     uint16 REFERRAL_CODE = 0; // Referral code to use
-    address AAVE_POOL_ADDRESSES_PROVIDER_ADDRESS = POOL_ADDRESSES_PROVIDER_ADDRESS_POLYGON; // PoolAddressesProvider contract of the Aave Pool
+    address AAVE_POOL_ADDRESSES_PROVIDER_ADDRESS = POOL_ADDRESSES_PROVIDER_ADDRESS_ARBITRUM; // PoolAddressesProvider contract of the Aave Pool
     address constant PROXY_ADMIN_ADDRESS = address(0); // Address of the proxy admin
     address constant OWNER_ADDRESS = OWNER; // Address of the vault owner
-    string constant SHARE_NAME = "AAVE V3 USDC"; // Name of the token shares
-    string constant SHARE_SYMBOL = "Av3USDC"; // Symbol of the token shares
+    string constant SHARE_NAME = "AAVE VAULT USDC"; // Name of the token shares
+    string constant SHARE_SYMBOL = "avUSDC"; // Symbol of the token shares
     uint256 constant FEE = 0; // Vault Fee bps in wad (e.g. 0.1e18 results in 10%)
     uint256 constant INITIAL_LOCK_DEPOSIT = 100; // Initial deposit on behalf of the vault
     // ===================================================
